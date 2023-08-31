@@ -24,8 +24,14 @@ public class TabelaProdutos {
         this.produtos.add(apontador);
         this.produtos.add(caderno);
         this.produtos.add(garrafaAgua);
-          
+    }
+
+    public List<Produto> getProdutos() {
+        return produtos;
     }
 
 
+    public List<Produto> buscarTodosProdutos() {
+        return this.getProdutos();
+    }
 }
