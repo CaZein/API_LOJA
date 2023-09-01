@@ -62,8 +62,18 @@ public class TabelaProdutos {
         this.produtos.add(novoProduto);
         return novoProduto;
 
-
     }
+
+    public void atualizarProduto(int produtoId,
+                                       Produto produtoAtualizar) {
+        Produto produtoProcurado = this.buscarProdutoPeloId(produtoId);
+        if (produtoProcurado != null) {
+            produtoProcurado.setName(produtoAtualizar.getName());
+            produtoProcurado.setDescricao(produtoAtualizar.getDescricao());
+            produtoProcurado.setValorUnitario(produtoAtualizar.getValorUnitario());
+        }
+    }
+
 
 }
 

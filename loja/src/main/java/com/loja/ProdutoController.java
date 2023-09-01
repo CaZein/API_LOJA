@@ -35,6 +35,11 @@ public class ProdutoController {
     }
 
 
+    @PutMapping("/{produtoId}")
+    public void atualizarProdutoNaLoja(@PathVariable int produtoId,
+                                       @RequestBody Produto dadosAtulizarProduto) {
+        this.tabelaProdutos.atualizarProduto(produtoId, dadosAtulizarProduto);
+    }
 
 
 }
