@@ -3,7 +3,7 @@ package com.loja;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TabelaProdutos {
+    public class TabelaProdutos {
 
     List<Produto> produtos = new ArrayList<>();
 
@@ -18,12 +18,16 @@ public class TabelaProdutos {
                 "Caderno em aspiral 96 folhas", 32.99);
         Produto garrafaAgua = new Produto(5, "Garrafa de água",
                 "Garrafa Stanley", 92.99);
+        Produto controle = new Produto(6, "Controle",
+                "controle projetor", 102.99);
+
 
         this.produtos.add(caneta);
         this.produtos.add(borracha);
         this.produtos.add(apontador);
         this.produtos.add(caderno);
         this.produtos.add(garrafaAgua);
+        this.produtos.add(controle);
     }
 
     public List<Produto> getProdutos() {
@@ -32,6 +36,21 @@ public class TabelaProdutos {
 
 
     public List<Produto> buscarTodosProdutos() {
+
         return this.getProdutos();
     }
+
+    public Produto buscarProdutoPeloId(int produtoId) {
+
+        Produto produtoProcurado = null;
+        for (Produto p : this.produtos) {
+            if (p.getId() == produtoId) {
+                produtoProcurado = p;
+                break;
+            }
+        }
+        return produtoProcurado;
+    }
+
 }
+
