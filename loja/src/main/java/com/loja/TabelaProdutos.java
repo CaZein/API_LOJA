@@ -3,7 +3,7 @@ package com.loja;
 import java.util.ArrayList;
 import java.util.List;
 
-    public class TabelaProdutos {
+public class TabelaProdutos {
 
     List<Produto> produtos = new ArrayList<>();
 
@@ -50,6 +50,19 @@ import java.util.List;
             }
         }
         return produtoProcurado;
+    }
+
+    public Produto cadastrarNovoProduto(Produto novoProduto) {
+
+        int ultimoIndex = this.produtos.size() - 1;
+        Produto ultimoProduto = this.produtos.get(ultimoIndex);
+        int proximoId = ultimoProduto.getId() + 1;
+
+        novoProduto.setId(proximoId);
+        this.produtos.add(novoProduto);
+        return novoProduto;
+
+
     }
 
 }
